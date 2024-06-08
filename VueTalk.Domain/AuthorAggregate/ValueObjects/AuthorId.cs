@@ -1,6 +1,6 @@
 ﻿using VueTalk.Domain.Common.Models;
 
-namespace VueTalk.Domain.Author.ValueObjects;
+namespace VueTalk.Domain.AuthorAggregate.ValueObjects;
 
 public sealed class AuthorId : ValueObject
 {

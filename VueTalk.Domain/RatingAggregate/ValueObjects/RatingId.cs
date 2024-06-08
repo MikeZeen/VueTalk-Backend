@@ -1,6 +1,6 @@
 ﻿using VueTalk.Domain.Common.Models;
 
-namespace VueTalk.Domain.Rating.ValueObjects;
+namespace VueTalk.Domain.RatingAggregate.ValueObjects;
 
 public sealed class RatingId : ValueObject
 {

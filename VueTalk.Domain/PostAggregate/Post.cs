@@ -1,10 +1,10 @@
-﻿using VueTalk.Domain.Author.ValueObjects;
-using VueTalk.Domain.Comment.ValueObjects;
+﻿using VueTalk.Domain.AuthorAggregate.ValueObjects;
+using VueTalk.Domain.CommentAggregate.ValueObjects;
 using VueTalk.Domain.Common.Models;
-using VueTalk.Domain.Post.ValueObjects;
-using VueTalk.Domain.Rating.ValueObjects;
+using VueTalk.Domain.PostAggregate.ValueObjects;
+using VueTalk.Domain.RatingAggregate.ValueObjects;
 
-namespace VueTalk.Domain.Post;
+namespace VueTalk.Domain.PostAggregate;
 
 public sealed class Post : AggregateRoot<PostId>
 {

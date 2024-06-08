@@ -1,6 +1,6 @@
 ﻿using VueTalk.Domain.Common.Models;
 
-namespace VueTalk.Domain.Post.ValueObjects;
+namespace VueTalk.Domain.PostAggregate.ValueObjects;
 
 public sealed class PostId : ValueObject
 {

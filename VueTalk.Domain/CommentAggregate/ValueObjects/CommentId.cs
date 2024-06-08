@@ -1,6 +1,6 @@
 ﻿using VueTalk.Domain.Common.Models;
 
-namespace VueTalk.Domain.Comment.ValueObjects;
+namespace VueTalk.Domain.CommentAggregate.ValueObjects;
 
 public sealed class CommentId : ValueObject
 {
