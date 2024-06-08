@@ -1,4 +1,6 @@
-﻿using VueTalk.Domain.Entities;
+﻿
+
+using VueTalk.Domain.UserAggregate;
 
 namespace VueTalk.Application.Common.Interfaces.Authentication;
 

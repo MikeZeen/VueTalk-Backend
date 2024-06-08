@@ -1,14 +1,16 @@
-﻿using VueTalk.Application.Authentication.Commands.Register;
-using VueTalk.Contracts.Authentication;
-using ErrorOr;
+﻿using ErrorOr;
+using MapsterMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using VueTalk.API.Controllers;
+using VueTalk.Application.Authentication.Commands.Register;
 using VueTalk.Application.Authentication.Common;
 using VueTalk.Application.Authentication.Queries.Login;
-using MapsterMapper;
-using Microsoft.AspNetCore.Authorization;
-namespace VueTalk.API.Controllers;
+using VueTalk.Contracts.Authentication;
+using VueTalk.Domain.Common.DomainErrors;
 
+namespace VueTalk.Api.Controllers;
 
 [Route("auth")]
 [AllowAnonymous]
@@ -31,20 +33,24 @@ public class AuthenticationController : ApiController
 
         return authResult.Match(
             authResult => Ok(_mapper.Map<AuthenticationResponse>(authResult)),
-            errors => Problem(errors)
-            );
-
+            errors => Problem(errors));
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login(LoginRequest request) 
+    public async Task<IActionResult> Login(LoginRequest request)
     {
         var query = _mapper.Map<LoginQuery>(request);
         var authResult = await _mediator.Send(query);
 
+        if (authResult.IsError && authResult.FirstError == Errors.Authentication.InvalidCredentials)
+        {
+            return Problem(
+                statusCode: StatusCodes.Status401Unauthorized,
+                title: authResult.FirstError.Description);
+        }
+
         return authResult.Match(
             authResult => Ok(_mapper.Map<AuthenticationResponse>(authResult)),
-            errors => Problem(errors)
-            );
+            errors => Problem(errors));
     }
 }

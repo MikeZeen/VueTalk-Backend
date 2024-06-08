@@ -1,10 +1,10 @@
-﻿using VueTalk.Domain.Entities;
+﻿using VueTalk.Domain.UserAggregate;
 
 namespace VueTalk.Application.Common.Interfaces.Persistence;
 
 public interface IUserRepository
 {
     User? GetUserByEmail(string email);
-    void AddUser(User user);
+    void Add(User user);
 }
 

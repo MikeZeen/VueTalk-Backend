@@ -1,6 +1,6 @@
 ﻿using ErrorOr;
 
-namespace VueTalk.Domain.Common.Errors;
+namespace VueTalk.Domain.Common.DomainErrors;
 
 public static partial class Errors
 {

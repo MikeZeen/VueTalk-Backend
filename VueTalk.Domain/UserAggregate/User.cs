@@ -1,7 +1,7 @@
 ﻿using VueTalk.Domain.Common.Models;
 using VueTalk.Domain.UserAggregate.ValueObjects;
 
-namespace Vuetalk.Domain.User;
+namespace VueTalk.Domain.UserAggregate;
 
 public sealed class User : AggregateRoot<UserId>
 {
@@ -13,8 +13,13 @@ public sealed class User : AggregateRoot<UserId>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
-    private User(string firstName, string lastName, string email, string password, UserId? userId = null)
-        : base(userId ?? UserId.CreateUnique())
+    private User(
+        UserId userId,
+        string firstName, 
+        string lastName, 
+        string email, 
+        string password)
+        : base(userId)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -22,10 +27,14 @@ public sealed class User : AggregateRoot<UserId>
         Password = password;
     }
 
-    public static User Create(string firstName, string lastName, string email, string password)
+    public static User Create(
+        string firstName, 
+        string lastName, 
+        string email, 
+        string password)
     {
-        // TODO: enforce invariants
         return new User(
+            UserId.CreateUnique(),
             firstName,
             lastName,
             email,

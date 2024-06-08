@@ -1,19 +1,22 @@
-﻿using VueTalk.Application.Common.Interfaces.Authentication;
+﻿using VueTalk.Application.Authentication.Common;
+using VueTalk.Application.Common.Interfaces.Authentication;
 using VueTalk.Application.Common.Interfaces.Persistence;
-using VueTalk.Domain.Entities;
-using VueTalk.Domain.Common.Errors;
+using VueTalk.Domain.Common.DomainErrors;
+using VueTalk.Domain.UserAggregate;
 using ErrorOr;
 using MediatR;
-using VueTalk.Application.Authentication.Common;
 
 namespace VueTalk.Application.Authentication.Commands.Register;
 
-public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>>
+public class RegisterCommandHandler :
+    IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>>
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
     private readonly IUserRepository _userRepository;
 
-    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
+    public RegisterCommandHandler(
+        IJwtTokenGenerator jwtTokenGenerator,
+        IUserRepository userRepository)
     {
         _jwtTokenGenerator = jwtTokenGenerator;
         _userRepository = userRepository;
@@ -23,21 +26,18 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
     {
         await Task.CompletedTask;
 
+        // 1. Validate the user doesn't exist
         if (_userRepository.GetUserByEmail(command.Email) is not null)
         {
             return Errors.User.DuplicateEmail;
         }
 
-        var user = new User
-        {
-            Email = command.Email,
-            Password = command.Password,
-            FirstName = command.FirstName,
-            LastName = command.LastName
-        };
+        // 2. Create user (generate unique ID) & Persist to DB
+        var user = User.Create(command.FirstName, command.LastName, command.Email, command.Password);
 
-        _userRepository.AddUser(user);
+        _userRepository.Add(user);
 
+        // 3. Create JWT token
         var token = _jwtTokenGenerator.GenerateToken(user);
 
         return new AuthenticationResult(

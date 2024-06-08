@@ -1,10 +1,10 @@
 ﻿using VueTalk.Application.Common.Interfaces.Authentication;
 using VueTalk.Application.Common.Interfaces.Persistence;
-using VueTalk.Domain.Entities;
-using VueTalk.Domain.Common.Errors;
+using VueTalk.Domain.Common.DomainErrors;
 using ErrorOr;
 using MediatR;
 using VueTalk.Application.Authentication.Common;
+using VueTalk.Domain.UserAggregate;
 
 namespace VueTalk.Application.Authentication.Queries.Login;
 
