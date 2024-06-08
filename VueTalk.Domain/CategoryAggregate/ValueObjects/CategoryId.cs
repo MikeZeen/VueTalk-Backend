@@ -1,6 +1,6 @@
 ﻿using VueTalk.Domain.Common.Models;
 
-namespace VueTalk.Domain.Category.ValueObjects;
+namespace VueTalk.Domain.CategoryAggregate.ValueObjects;
 
 public sealed class CategoryId : ValueObject
 {

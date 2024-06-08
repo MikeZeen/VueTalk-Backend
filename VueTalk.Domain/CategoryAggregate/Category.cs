@@ -1,17 +1,17 @@
-﻿using VueTalk.Domain.Category.ValueObjects;
+﻿using VueTalk.Domain.CategoryAggregate.ValueObjects;
 using VueTalk.Domain.Common.Models;
 
 
-namespace VueTalk.Domain.Category; 
+namespace VueTalk.Domain.CategoryAggregate; 
 
-public sealed class Post : AggregateRoot<CategoryId>
+public sealed class Category : AggregateRoot<CategoryId>
 {
     public string Name { get; }
     public string Description { get; }
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
-    private Post(
+    private Category(
         CategoryId categoryId,
         string name,
         string description,
@@ -25,7 +25,7 @@ public sealed class Post : AggregateRoot<CategoryId>
         UpdatedDateTime = updatedDateTime;
     }
 
-    public static Post Create(
+    public static Category Create(
         string name,
         string description)
     {

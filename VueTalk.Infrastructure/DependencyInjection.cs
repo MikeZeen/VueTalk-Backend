@@ -16,15 +16,16 @@ namespace VueTalk.Infrastructure;
 public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(
-        this IServiceCollection services, 
+        this IServiceCollection services,
         ConfigurationManager configuration)
     {
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
         services.AddAuth(configuration);
+        services.AddPersistance();
 
-        services.AddScoped<IUserRepository, UserRepository>();
         return services;
     }
+
     public static IServiceCollection AddAuth(
        this IServiceCollection services,
        ConfigurationManager configuration)
@@ -46,6 +47,15 @@ public static class DependencyInjection
                 ValidAudience = jwtSettings.Audience,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret))
             });
+
+        return services;
+    }
+
+    public static IServiceCollection AddPersistance(
+        this IServiceCollection services)
+    {
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
 
         return services;
     }
