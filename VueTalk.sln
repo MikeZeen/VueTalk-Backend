@@ -13,14 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueTalk.Contracts", "VueTal
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueTalk.Domain", "VueTalk.Domain\VueTalk.Domain.csproj", "{4D6F8905-A804-4108-B7B3-E0BB3FB53A97}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{F3A0F2E2-1DCA-4293-AD1D-E67C23410E6F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainModels", "DomainModels", "{2DB6AD5E-F124-49E3-A462-CFD26599278D}"
-	ProjectSection(SolutionItems) = preProject
-		Aggregates.Comment.md = Aggregates.Comment.md
-		Aggregates.Post.md = Aggregates.Post.md
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,9 +42,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{2DB6AD5E-F124-49E3-A462-CFD26599278D} = {F3A0F2E2-1DCA-4293-AD1D-E67C23410E6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C02FE309-B777-4E60-8978-EFF103713AD8}
