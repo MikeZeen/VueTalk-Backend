@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueTalk.Infrastructure", "VueTalk.Infrastructure\VueTalk.Infrastructure.csproj", "{C9782D61-9B9C-4E84-AD33-2BFBA7996D2D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueTalk.API", "VueTalk.API\VueTalk.API.csproj", "{92B1AE35-D8D0-408A-B7D0-998D8DD4FCB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueTalk.Application", "VueTalk.Application\VueTalk.Application.csproj", "{7D5E93BA-8CCE-493D-987F-B54B9889A3C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueTalk.Contracts", "VueTalk.Contracts\VueTalk.Contracts.csproj", "{DE6E3629-AE19-4C01-9C59-BA70630AF185}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueTalk.Domain", "VueTalk.Domain\VueTalk.Domain.csproj", "{4D6F8905-A804-4108-B7B3-E0BB3FB53A97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{F3A0F2E2-1DCA-4293-AD1D-E67C23410E6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainModels", "DomainModels", "{2DB6AD5E-F124-49E3-A462-CFD26599278D}"
+	ProjectSection(SolutionItems) = preProject
+		Aggregates.Comment.md = Aggregates.Comment.md
+		Aggregates.Post.md = Aggregates.Post.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9782D61-9B9C-4E84-AD33-2BFBA7996D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9782D61-9B9C-4E84-AD33-2BFBA7996D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9782D61-9B9C-4E84-AD33-2BFBA7996D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9782D61-9B9C-4E84-AD33-2BFBA7996D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92B1AE35-D8D0-408A-B7D0-998D8DD4FCB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B1AE35-D8D0-408A-B7D0-998D8DD4FCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B1AE35-D8D0-408A-B7D0-998D8DD4FCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92B1AE35-D8D0-408A-B7D0-998D8DD4FCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D5E93BA-8CCE-493D-987F-B54B9889A3C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5E93BA-8CCE-493D-987F-B54B9889A3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5E93BA-8CCE-493D-987F-B54B9889A3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5E93BA-8CCE-493D-987F-B54B9889A3C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE6E3629-AE19-4C01-9C59-BA70630AF185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE6E3629-AE19-4C01-9C59-BA70630AF185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE6E3629-AE19-4C01-9C59-BA70630AF185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE6E3629-AE19-4C01-9C59-BA70630AF185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D6F8905-A804-4108-B7B3-E0BB3FB53A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6F8905-A804-4108-B7B3-E0BB3FB53A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6F8905-A804-4108-B7B3-E0BB3FB53A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6F8905-A804-4108-B7B3-E0BB3FB53A97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DB6AD5E-F124-49E3-A462-CFD26599278D} = {F3A0F2E2-1DCA-4293-AD1D-E67C23410E6F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C02FE309-B777-4E60-8978-EFF103713AD8}
+	EndGlobalSection
+EndGlobal
